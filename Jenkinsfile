@@ -4,12 +4,21 @@ pipeline {
     stages {
         stage('Install Packages') {
             steps {
-                nodejs('Node 22') {
-                    echo "Installing Packages......"
+                script {
                     sh 'npm install'
                 }
             }
         }
+
+        stage('Run the App') {
+            steps {
+                script {
+                    sh 'node index.js &'
+                    sleep 5
+                }
+            }
+        }
+
         
     }
 }
