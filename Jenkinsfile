@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Install Packages') {
             steps {
-                script {
+                nodejs('Node 22') {
+                    echo "Installing Packages......"
                     sh 'npm install'
                 }
             }
