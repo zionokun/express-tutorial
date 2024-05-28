@@ -9,24 +9,6 @@ pipeline {
                 }
             }
         }
-
-        stage('Run the App') {
-            steps {
-                script {
-                    sh 'node index.js &'
-                    sleep 5
-                }
-            }
-        }
-
         
-
-        stage('Cleanup') {
-            steps {
-                script {
-                    sh 'pkill -f "node"'
-                }
-            }
-        }
     }
 }
