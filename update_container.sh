@@ -17,6 +17,6 @@ while true; do
         docker run -d --restart always --name $CONTAINER_NAME -p 3000:3000 $DOCKERHUB_USERNAME/node-docker:latest
     fi
     
-    # Sleep for a while before checking for updates again (e.g., every hour)
-    sleep 3600
+    # Sleep for a while before checking for updates again
+    sleep 300
 done
